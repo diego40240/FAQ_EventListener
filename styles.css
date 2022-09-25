@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --SoftViolet: hsl(273, 75%, 66%);
+    --SoftBlue: hsl(240, 73%, 65%);
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(to bottom,hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    font-family: 'Kumbh Sans', sans-serif;
+    margin: 0 1.25rem;
+}
+
+.contenedor{
+    display: grid;
+    place-content: center;
+    grid-template-areas: 'izquierda derecha';
+    grid-auto-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    min-height: 40.625rem;
+    max-width: 76.875rem;
+    background-color: white;
+    border-radius: 25px;
+}
+
+
+
+.contenedor__izq{
+    grid-area: izquierda;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    /* background-size: 62.5em 68.75em; */
+    /* background-size: 160%;
+    background-position-x:-480px;
+    background-position-y: -180px; */
+    background-size: 200%;
+    background-position-x: -45.375rem;
+    background-position-y: -23.75rem;
+    
+    position: relative;
+    /* overflow: hidden; */
+    
+}
+
+.contenedor__izq__woman{
+    min-width: 100%;
+    position: relative;
+    top: 6.25rem;
+    left: -6.875rem;
+    
+}
+
+.contenedor__izq__box{
+    position: relative;
+    width: 40%;
+    top: -12.0625rem;
+    left: -7.5rem;
+    
+}
+.contenedor__der{
+    grid-area: derecha;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 8.125rem;
+    gap: 1.9375rem;
+}
+
+.contenedor__der h1{
+    font-weight: 700;
+    font-size: 2.5rem;
+    
+}
+
+.contenedor__der__pregunta{
+    list-style: none;
+    /* background-color: green; */
+    border-bottom: 1px;
+    border-bottom-style: ridge;
+    
+    display: grid;
+    grid-template-columns: 1fr 0.1fr;
+    grid-template-rows: 0.3fr 0.1fr;
+    /* row-gap: 12px; */
+    padding: 1.25rem 0;
+    
+    
+}
+.contenedor__der__pregunta__titulo{
+    color: hsl(237, 12%, 33%);
+    font-weight: 400;
+    cursor: pointer;
+    max-width: 80%;
+}
+
+
+/* LLamar CAMBIO COLOR H3 */
+.contenedor__der__pregunta__titulo--color{
+    color: black;
+    font-weight: 700;
+}
+
+.contenedor__der__pregunta__titulo:hover{
+    color: #F47B56;
+}
+
+.contenedor__der__pregunta__icono{
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+}
+
+/* LLamar CAMBIO ROTACION IMG */
+.contenedor__der__pregunta__icono--rotate{
+    
+    transform: rotate(180deg);
+}
+
+.contenedor__der__pregunta__respuesta{
+    display: none;
+    margin-top: 0.625rem;  
+    text-align: justify;
+    color: hsl(240, 6%, 50%);  
+    cursor: pointer;
+}
+
+.contenedor__der__pregunta__respuesta--ver{
+    display: block; 
+    padding-right: 30px;
+   
+}
+
+.contenedor__izq__respowoman,
+.contenedor__izq__sombra {
+    display: none;
+}
+
+@media screen and (max-width:1226px) {
+        
+    body{
+        padding-top: 100px;
+    }
+    .contenedor{
+        grid-template-areas: 'izquierda'
+                            'derecha';
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 0.2fr 1fr;
+        min-width: 26.875rem;
+        
+    }
+    .contenedor__der{
+       
+        margin-right: 0;
+        align-items: center;
+    }       
+    
+    .contenedor__izq{
+        grid-area: izquierda;
+        background-image: none;
+        position: relative;
+        /* overflow: hidden; */
+        text-align: center;
+    }
+   
+    .contenedor__izq__box,
+    .contenedor__izq__woman{
+        display: none;        
+    }
+
+    .contenedor__izq__respowoman{
+        display: inline;
+        position: absolute;
+        max-width: 55%;
+        top: -110px;
+        /* top:;
+        left:; */
+    }
+
+    .contenedor__izq__sombra {
+        display: inline;
+        position: relative;
+    }
+
+    .contenedor__der__pregunta__titulo{
+        max-width: 100%;
+    }
+
+    .contenedor__der__lista{
+        margin: 0 20px;
+    }
+}
